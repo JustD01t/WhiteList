@@ -10,7 +10,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\scheduler\Task;
 
 class WhiteList extends PluginBase implements Listener{
-	public function onEnable(){
+	public function onEnable() : void{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		@mkdir ($this->getDataFolder());
 		$this->config = new Config($this->getDataFolder() . "Config.yml", Config::YAML, [
@@ -85,6 +85,9 @@ class WhiteList extends PluginBase implements Listener{
 	public function save() {
 	    $this->config->setAll($this->db);
 	    $this->config->save();
+	}
+	public function onDisable() : void{
+		$this->save();
 	}
 }
 ?>
