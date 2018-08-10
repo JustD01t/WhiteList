@@ -1,0 +1,12 @@
+name: WhiteList
+main: alvin0319\WhiteList\WhiteList
+author: alvin0319
+version: 1.0.0
+api:
+- 4.0.0
+- 3.1.0
+- 3.0.0
+
+commands:
+ white:
+  description: 화리관련 명령어
